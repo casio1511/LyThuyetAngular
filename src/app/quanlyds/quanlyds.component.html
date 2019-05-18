@@ -1,0 +1,53 @@
+<h1>Binding 1 chiều</h1>
+{{name}} 
+
+<h2>Binding 2 chiều</h2>
+<!-- <input type="text" value="Hello" > -->
+<input type="text" #bien>
+<button type="button" (click)="bamNut(bien.value)">Nhấn Nút Nha</button>
+<p>{{xinChao}}</p>
+
+<h2>*ngIF</h2>
+<div *ngIf="so == 2 , else KoPhaiSo2">
+    <p>Đây là số 2</p>
+</div>
+<ng-template #KoPhaiSo2>
+    <p>Đây là số ko phai 2</p>
+</ng-template>
+
+<h1> Bấm ẩn hiện dùng ngIf</h1>
+<button type="button" (click)="anHien()">Ẩn/Hiện</button>
+<p *ngIf="isHien, else An">Hello</p>
+<ng-template #An>ByeBye</ng-template>
+
+<h1>Bài Tập ngIF Dangnhap Dang Xuat 2 button</h1>
+<button  *ngIf="isLogin, else DangXuat" type="button" (click)="dangNhap()">Dang Nhap</button>
+<ng-template #DangXuat>
+    <p>Hello {{name}}</p>
+    <button type="button" (click)="dangXuat()">Dang Xuat</button>
+</ng-template>
+
+<h1> *ngFor</h1>
+
+<!-- <p class="sanpham" *ngFor="let item of mang; let vitri = index">
+        {{vitri+1}} - {{item}}
+</p> -->
+
+
+<p [ngClass]="{sanpham : vitri%2==0}" *ngFor="let item of mang; let vitri = index">
+        {{vitri+1}} - {{item}}
+</p>
+
+<!-- <div *ngFor="let item of mang; let vitri = index">
+    <p style="background-color: yellow" *ngIf="vitri %2 ==0, else KhongHienMau">
+       {{vitri+1}} - {{item}}
+    </p>   
+    <ng-template #KhongHienMau>
+            <p>
+                    {{vitri+1}} - {{item}}
+                 </p>  
+    </ng-template>
+  
+</div> -->
+
+

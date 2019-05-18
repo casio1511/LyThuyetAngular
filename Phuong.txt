@@ -1,0 +1,65 @@
+﻿cài app node.js 
+cài đặt angular (cài 1 lần) npm install -g @angular/cli
+
+
+1. Tạo mới project ng new <tenProject>
+2. Mở project > cài node module npm install
+3. Module để quản lý TẤT CẢ component cùng cấp với nó => phải khai báo tên component đó với module
+4. Cài thư viện cần npm install bootstrap popper.js jquery
+5. Mở file angular.json paste
+            "styles": [
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [ 
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ],
+6. Bật project localhost ng serve
+
+-----------------------------------------------------------
++Component Directive
++structural Directive
+  + Binding data (gắn dữ liệu)
+		1. Binding 1 chiều
+		2. Binding 2 chiều 
+  + ngif, else
+  + ngFor
+  + ngSwitch
+ Attribute Dire
+   + ngClass
+   + ngStyle
+
+-----------------------
+Binding data
+    1. Binding 1 chiều {{tenBien}}
+    2. Binding 2 chiều: Nhập input > truyền vào ts thông qua sự kiện > từ ts {{tenBien}} vào html
+-----------------------
+*ngIf, else
+<div *ngIf="so == 2 , else KoPhaiSo2">
+    <p>Đây là số 2</p>
+</div>
+<ng-template #KoPhaiSo2>
+    <p>Đây là số ko phai 2</p>
+</ng-template>
+-----------------------
+*ngFor="let item of mang"
+{{item}}
+
+------------
+[ngClass]="ten"
+[ngClass="{ten : vitri%2==0}"  => kết hợp sửa file css để hiện css
+
+tương tự [ngStyle]="" thì ko cần dùng file css
+
+----------------------
+Git hub
+1. Tạo mới repository
+2. git clone linkrepo
+3. Copy code vào folder repo vừa tạo
+4. git status để kiem tra status repo
+5. git add .
+6. git commit -m "Noidung"
+7. git push origin master
+8. git status
